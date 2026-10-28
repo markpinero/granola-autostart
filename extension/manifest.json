@@ -1,0 +1,9 @@
+{
+  "manifest_version": 3,
+  "name": "Granola Auto-start (Meet)",
+  "version": "0.1.0",
+  "description": "Tells the local granola-autostart app when you're in a Google Meet call.",
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{ "matches": ["https://meet.google.com/*"], "js": ["content.js"] }],
+  "host_permissions": ["http://127.0.0.1:47615/*"]
+}
