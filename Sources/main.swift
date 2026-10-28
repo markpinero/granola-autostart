@@ -17,8 +17,12 @@ if token.isEmpty {
 
 let loop = Loop(signals: signals)
 log("running\(dryRun ? " (dry run)" : "") with \(signals.map(\.name).joined(separator: ","))")
+let calendar = CalendarSource()
 let timer = Timer(timeInterval: 5, repeats: true) { _ in
-    if let why = loop.tick(now: Date()) { startGranolaNote(reason: why, dryRun: dryRun) }
+    if let why = loop.tick(now: Date()) {
+        let platform = why.contains("meet") ? "meet" : why.contains("zoom") ? "zoom" : nil
+        startGranolaNote(reason: why, dryRun: dryRun, event: calendar.currentEvent(now: Date(), platform: platform))
+    }
 }
 RunLoop.main.add(timer, forMode: .common)
 RunLoop.main.run()

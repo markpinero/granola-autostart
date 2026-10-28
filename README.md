@@ -12,6 +12,8 @@ A background app checks three things every 5 seconds:
 
 The first trigger opens `granola://new-document?creation_source=autostart&auto_transcribe=1`. Later triggers are ignored until every trigger has been quiet for 2 minutes, which ends the call. Calls closer together than that share one note.
 
+If the calendar (System Settings → Internet Accounts) has an event overlapping the call, the note is titled after it; rejoining the same event reuses the note. No match → untitled note as before.
+
 That deep link is undocumented (found in Granola 7.700.0). If a Granola update breaks it, the log will still show `start` lines but no note appears.
 
 ## Install

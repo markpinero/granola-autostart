@@ -4,5 +4,7 @@
 <dict>
   <key>CFBundleIdentifier</key><string>com.markpinero.granola-autostart</string>
   <key>CFBundleName</key><string>granola-autostart</string>
+  <key>NSCalendarsUsageDescription</key><string>Names auto-started Granola notes after the meeting in your calendar.</string>
+  <key>NSCalendarsFullAccessUsageDescription</key><string>Names auto-started Granola notes after the meeting in your calendar.</string>
 </dict>
 </plist>
